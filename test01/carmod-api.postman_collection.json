@@ -1,0 +1,85 @@
+{
+    "info": {
+        "name": "Carmod API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Sign Up",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"test123\",\n    \"phoneNumber\": \"13700137000\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": "{{base_url}}/api/auth/signup"
+                    }
+                },
+                {
+                    "name": "Sign In",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin123\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": "{{base_url}}/api/auth/signin"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Test",
+            "item": [
+                {
+                    "name": "Public Access",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/api/test/public"
+                    }
+                },
+                {
+                    "name": "User Access",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": "{{base_url}}/api/test/user"
+                    }
+                },
+                {
+                    "name": "Admin Access",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": "{{base_url}}/api/test/admin"
+                    }
+                }
+            ]
+        }
+    ]
+} 

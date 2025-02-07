@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akrapovič - 品牌详情 - CarMod+</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/brand-detail.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <!-- 导航栏部分相同 -->
+        </nav>
+    </header>
+
+    <main class="brand-detail-container">
+        <div class="back-button">
+            <a href="brands.html" class="back-link">
+                <span class="back-icon">←</span>
+                返回品牌列表
+            </a>
+        </div>
+
+        <div class="brand-header">
+            <div class="brand-banner-wrapper">
+                <img src="images/brands/akrapovic-banner.jpg" alt="Akrapovič Banner" class="brand-banner">
+                <div class="banner-overlay">
+                    <div class="banner-content">
+                        <h1>声浪艺术 性能极致</h1>
+                        <p>斯洛文尼亚顶级排气系统制造商</p>
+                    </div>
+                </div>
+            </div>
+            <div class="brand-info">
+                <img src="images/brands/akrapovic.png" alt="Akrapovič Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>Akrapovič</h1>
+                    <p class="brand-category">排气系统</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="brand-content">
+            <section class="brand-section">
+                <h2>品牌简介</h2>
+                <p>Akrapovič创立于1991年，是全球顶级的排气系统制造商，总部位于斯洛文尼亚。品牌以其在MotoGP、WSBK等顶级赛事中的卓越表现而闻名。Akrapovič的产品采用钛合金等轻量化材料，结合精湛的工艺和创新的设计，为车主带来极致的声浪体验和显著的性能提升。</p>
+            </section>
+
+            <section class="brand-section">
+                <h2>主要产品系列</h2>
+                <div class="product-grid">
+                    <div class="product-card" data-href="product-detail-akrapovic-evolution.html">
+                        <img src="images/products/akrapovic-evolution.jpg" alt="Evolution Line">
+                        <h3>Evolution Line</h3>
+                        <p>顶级全段排气系统</p>
+                        <ul class="product-features">
+                            <li>钛合金主体结构</li>
+                            <li>碳纤维尾罩</li>
+                            <li>最大功率提升</li>
+                            <li>赛道级声浪</li>
+                        </ul>
+                        <div class="product-action">
+                            <button class="view-detail-btn">查看详情</button>
+                            <button class="play-sound-btn" onclick="event.stopPropagation(); playExhaustSound('evolution')">
+                                <span class="sound-icon">🔊</span>试听声浪
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" onclick="window.location.href='product-detail-akrapovic-racing.html'">
+                        <img src="images/products/akrapovic-racing.jpg" alt="Racing Line">
+                        <h3>Racing Line</h3>
+                        <p>专业竞技排气系统</p>
+                        <ul class="product-features">
+                            <li>不锈钢主体</li>
+                            <li>钛合金尾段</li>
+                            <li>优化背压</li>
+                            <li>运动声浪</li>
+                        </ul>
+                        <div class="product-action">
+                            <button class="view-detail-btn">查看详情</button>
+                            <button class="play-sound-btn" onclick="event.stopPropagation(); playExhaustSound('racing')">
+                                <span class="sound-icon">🔊</span>试听声浪
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" onclick="window.location.href='product-detail-akrapovic-slipon.html'">
+                        <img src="images/products/akrapovic-slipon.jpg" alt="Slip-On Line">
+                        <h3>Slip-On Line</h3>
+                        <p>入门级改装方案</p>
+                        <ul class="product-features">
+                            <li>即插即用设计</li>
+                            <li>多种材质可选</li>
+                            <li>温和声浪</li>
+                            <li>轻度性能提升</li>
+                        </ul>
+                        <div class="product-action">
+                            <button class="view-detail-btn">查看详情</button>
+                            <button class="play-sound-btn" onclick="event.stopPropagation(); playExhaustSound('slipon')">
+                                <span class="sound-icon">🔊</span>试听声浪
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="brand-section">
+                <h2>技术特点</h2>
+                <div class="tech-features">
+                    <div class="tech-item">
+                        <h3>先进材料</h3>
+                        <p>采用航空级钛合金和碳纤维材料，实现极致轻量化和耐久性。</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>声学优化</h3>
+                        <p>独特的消音设计，在不同转速下都能带来完美的声浪表现。</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>流体动力学</h3>
+                        <p>优化的管径和弯角设计，降低排气背压，提升发动机效率。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="brand-section">
+                <h2>适用车型</h2>
+                <div class="car-brands">
+                    <div class="car-brand">
+                        <img src="images/car-brands/porsche.png" alt="保时捷">
+                        <span>保时捷</span>
+                    </div>
+                    <div class="car-brand">
+                        <img src="images/car-brands/bmw.png" alt="宝马">
+                        <span>宝马</span>
+                    </div>
+                    <div class="car-brand">
+                        <img src="images/car-brands/ferrari.png" alt="法拉利">
+                        <span>法拉利</span>
+                    </div>
+                    <div class="car-brand">
+                        <img src="images/car-brands/lamborghini.png" alt="兰博基尼">
+                        <span>兰博基尼</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="brand-section">
+                <h2>用户评价</h2>
+                <div class="reviews">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="images/avatars/user6.jpg" alt="用户头像">
+                            <div>
+                                <h4>刘先生</h4>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>保时捷911装了Evolution Line，声浪太迷人了，低速时克制有度，全油门时又极具激情。做工精良，值得投资。</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="images/avatars/user7.jpg" alt="用户头像">
+                            <div>
+                                <h4>杨先生</h4>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>M4装了Racing Line，声浪和性能都有明显提升，每次启动都让人心情愉悦，安装也很专业。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <!-- 页脚部分相同 -->
+    </footer>
+
+    <script src="scripts/brand-detail.js"></script>
+</body>
+</html> 

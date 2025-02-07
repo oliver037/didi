@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改装资讯 - CarMod+</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/news.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="CarMod+" class="logo-img">
+                <h1>CarMod<span class="plus">+</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="news.html" class="active">资讯</a></li>
+                <li><a href="cases.html">案例</a></li>
+                <li><a href="brands.html">品牌</a></li>
+                <li><a href="shops.html">店家</a></li>
+                <li><a href="calculator.html">改装计算器</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="login.html" id="loginLink">登录</a> | 
+                <a href="register.html" id="registerLink">注册</a>
+                <span id="userInfo" style="display: none;">
+                    欢迎，<span id="username"></span>
+                    <a href="#" id="logoutBtn">退出</a>
+                </span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="news-container">
+        <div class="news-categories">
+            <button class="category-btn active">全部</button>
+            <button class="category-btn">改装鉴赏</button>
+            <button class="category-btn">越野</button>
+            <button class="category-btn">新车</button>
+            <button class="category-btn">活动展会</button>
+            <button class="category-btn">文化</button>
+            <button class="category-btn">社区</button>
+        </div>
+
+        <div class="news-grid">
+            <article class="news-card">
+                <div class="news-image">
+                    <img src="images/news/news1.jpg" alt="改装新闻">
+                    <span class="news-category">改装鉴赏</span>
+                </div>
+                <div class="news-content">
+                    <h3>深圳零创获得CSF高性能中冷中港澳总代</h3>
+                    <p class="news-excerpt">CSF作为全球顶级的中冷制造商，其产品广泛应用于各类高性能车型...</p>
+                    <div class="news-meta">
+                        <span class="news-date">2024-03-15</span>
+                        <span class="news-views">阅读: 2.3k</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-image">
+                    <img src="images/news/news2.jpg" alt="改装新闻">
+                    <span class="news-category">新品发布</span>
+                </div>
+                <div class="news-content">
+                    <h3>RAYS gramLIGHTS系列新品发布</h3>
+                    <p class="news-excerpt">日本顶级轮圈品牌RAYS推出全新gramLIGHTS系列产品...</p>
+                    <div class="news-meta">
+                        <span class="news-date">2024-03-14</span>
+                        <span class="news-views">阅读: 1.8k</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 更多新闻卡片 -->
+        </div>
+
+        <div class="load-more">
+            <button class="load-more-btn">加载更多</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">关于我们</a> |
+                <a href="#contact">联系我们</a> |
+                <a href="#terms">使用条款</a> |
+                <a href="#privacy">隐私政策</a>
+            </div>
+            <div class="copyright">
+                Copyright © 2024 CarMod+ All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/news.js"></script>
+</body>
+</html> 

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例详情 - CarMod+</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/case-detail.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="CarMod+" class="logo-img">
+                <h1>CarMod<span class="plus">+</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#news">资讯</a></li>
+                <li><a href="#cases">案例</a></li>
+                <li><a href="#brands">品牌</a></li>
+                <li><a href="#shops">店家</a></li>
+                <li><a href="#calculator">改装计算器</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="login.html" id="loginLink">登录</a> | 
+                <a href="register.html" id="registerLink">注册</a>
+                <span id="userInfo" style="display: none;">
+                    欢迎，<span id="username"></span>
+                    <a href="#" id="logoutBtn">退出</a>
+                </span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="case-detail-container">
+        <div class="case-gallery">
+            <div class="main-image">
+                <img src="images/cases/bmw-m3-large.jpg" alt="BMW M3改装案例" id="mainImage">
+            </div>
+            <div class="thumbnail-list">
+                <img src="images/cases/bmw-m3-1.jpg" alt="细节图1" class="thumbnail active">
+                <img src="images/cases/bmw-m3-2.jpg" alt="细节图2" class="thumbnail">
+                <img src="images/cases/bmw-m3-3.jpg" alt="细节图3" class="thumbnail">
+                <img src="images/cases/bmw-m3-4.jpg" alt="细节图4" class="thumbnail">
+            </div>
+        </div>
+
+        <div class="case-info">
+            <div class="case-header">
+                <h1>BMW M3 Competition 专业赛道改装方案</h1>
+                <div class="case-meta">
+                    <span class="case-tag">德系</span>
+                    <span class="case-rating">评分: 4.9/5.0</span>
+                    <span class="case-budget">预算: ¥350,000</span>
+                </div>
+            </div>
+
+            <div class="case-section">
+                <h2>改装概述</h2>
+                <p>本案例展示了一台BMW M3 Competition的专业赛道改装方案。通过精心选配的改装部件，在保证合法性的同时，显著提升了车辆的动力输出和操控表现。</p>
+            </div>
+
+            <div class="case-section">
+                <h2>改装清单</h2>
+                <div class="mod-list">
+                    <div class="mod-category">
+                        <h3>动力系统</h3>
+                        <ul>
+                            <li>
+                                <span class="mod-name">Akrapovic 钛合金排气</span>
+                                <span class="mod-price">¥98,000</span>
+                            </li>
+                            <li>
+                                <span class="mod-name">BMC 高流量空滤</span>
+                                <span class="mod-price">¥3,800</span>
+                            </li>
+                            <li>
+                                <span class="mod-name">RaceChip GTS Black 程序优化</span>
+                                <span class="mod-price">¥12,000</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mod-category">
+                        <h3>底盘悬挂</h3>
+                        <ul>
+                            <li>
+                                <span class="mod-name">KW V3 绞牙避震</span>
+                                <span class="mod-price">¥42,000</span>
+                            </li>
+                            <li>
+                                <span class="mod-name">Brembo GT 刹车套装</span>
+                                <span class="mod-price">¥86,000</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mod-category">
+                        <h3>外观套件</h3>
+                        <ul>
+                            <li>
+                                <span class="mod-name">M Performance 碳纤维套件</span>
+                                <span class="mod-price">¥88,000</span>
+                            </li>
+                            <li>
+                                <span class="mod-name">BBS FI-R 锻造轮毂</span>
+                                <span class="mod-price">¥68,000</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-section">
+                <h2>改装效果</h2>
+                <div class="performance-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">马力提升</span>
+                        <span class="stat-value">+75hp</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">扭矩提升</span>
+                        <span class="stat-value">+90Nm</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">百公里加速</span>
+                        <span class="stat-value">-0.4s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-section">
+                <h2>改装建议</h2>
+                <p>此方案适合追求极致操控的车主，建议具备一定赛道驾驶经验。所有改装部件均已通过相关认证，符合现行法规要求。建议分阶段进行改装，先完成底盘升级，再考虑动力提升。</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">关于我们</a> |
+                <a href="#contact">联系我们</a> |
+                <a href="#terms">使用条款</a> |
+                <a href="#privacy">隐私政策</a>
+            </div>
+            <div class="copyright">
+                Copyright © 2024 CarMod+ All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/case-detail.js"></script>
+</body>
+</html> 

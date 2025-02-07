@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brembo - 品牌详情 - CarMod+</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/brand-detail.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <!-- 导航栏部分相同 -->
+        </nav>
+    </header>
+
+    <main class="brand-detail-container">
+        <div class="back-button">
+            <a href="brands.html" class="back-link">
+                <span class="back-icon">←</span>
+                返回品牌列表
+            </a>
+        </div>
+
+        <div class="brand-header">
+            <div class="brand-banner-wrapper">
+                <img src="images/brands/brembo-banner.jpg" alt="Brembo Banner" class="brand-banner">
+                <div class="banner-overlay">
+                    <div class="banner-content">
+                        <h1>制动艺术 安全至上</h1>
+                        <p>意大利顶级制动系统制造商</p>
+                    </div>
+                </div>
+            </div>
+            <div class="brand-info">
+                <img src="images/brands/brembo.png" alt="Brembo Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>Brembo</h1>
+                    <p class="brand-category">制动系统</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="brand-content">
+            <section class="brand-section">
+                <h2>品牌简介</h2>
+                <p>Brembo成立于1961年，总部位于意大利贝加莫，是全球顶级的制动系统制造商。作为F1、MotoGP等顶级赛事的官方供应商，Brembo以其卓越的制动性能、可靠性和创新设计而闻名。公司产品涵盖高性能刹车卡钳、碟盘、刹车片等全系列制动系统解决方案。</p>
+            </section>
+
+            <section class="brand-section">
+                <h2>主要产品系列</h2>
+                <div class="product-grid">
+                    <div class="product-card" data-href="product-detail-brembo-gt.html">
+                        <img src="images/products/brembo-gt.jpg" alt="GT系列">
+                        <h3>GT系列</h3>
+                        <p>顶级性能制动套装</p>
+                        <ul class="product-features">
+                            <li>6活塞卡钳</li>
+                            <li>380mm碟盘</li>
+                            <li>锻造铝合金</li>
+                            <li>多种颜色可选</li>
+                        </ul>
+                        <div class="product-action">
+                            <button class="view-detail-btn">查看详情</button>
+                            <button class="compare-btn">性能对比</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-href="product-detail-brembo-sport.html">
+                        <img src="images/products/brembo-sport.jpg" alt="Sport系列">
+                        <h3>Sport系列</h3>
+                        <p>运动级制动方案</p>
+                        <ul class="product-features">
+                            <li>4活塞卡钳</li>
+                            <li>355mm碟盘</li>
+                            <li>高性能刹车片</li>
+                            <li>日常赛道兼顾</li>
+                        </ul>
+                        <div class="product-action">
+                            <button class="view-detail-btn">查看详情</button>
+                            <button class="compare-btn">性能对比</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-href="product-detail-brembo-street.html">
+                        <img src="images/products/brembo-street.jpg" alt="Street系列">
+                        <h3>Street系列</h3>
+                        <p>街道升级套件</p>
+                        <ul class="product-features">
+                            <li>双活塞卡钳</li>
+                            <li>330mm碟盘</li>
+                            <li>低粉尘设计</li>
+                            <li>舒适静音</li>
+                        </ul>
+                        <div class="product-action">
+                            <button class="view-detail-btn">查看详情</button>
+                            <button class="compare-btn">性能对比</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="brand-section">
+                <h2>技术特点</h2>
+                <div class="tech-features">
+                    <div class="tech-item">
+                        <h3>锻造工艺</h3>
+                        <p>采用一体式锻造工艺，提供更高的强度和更好的散热性能。</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>散热设计</h3>
+                        <p>创新的通风槽设计，确保在高强度制动时保持最佳工作温度。</p>
+                    </div>
+                    <div class="tech-item">
+                        <h3>智能布局</h3>
+                        <p>优化的活塞布局，提供更均匀的制动压力分布。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="brand-section performance-comparison">
+                <h2>性能对比</h2>
+                <div class="comparison-chart">
+                    <canvas id="brakeChart"></canvas>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="color-dot original"></span>
+                            <span>原厂制动</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-dot brembo"></span>
+                            <span>Brembo升级</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="brand-section">
+                <h2>适用车型</h2>
+                <div class="car-brands">
+                    <div class="car-brand">
+                        <img src="images/car-brands/ferrari.png" alt="法拉利">
+                        <span>法拉利</span>
+                    </div>
+                    <div class="car-brand">
+                        <img src="images/car-brands/porsche.png" alt="保时捷">
+                        <span>保时捷</span>
+                    </div>
+                    <div class="car-brand">
+                        <img src="images/car-brands/bmw.png" alt="宝马">
+                        <span>宝马</span>
+                    </div>
+                    <div class="car-brand">
+                        <img src="images/car-brands/amg.png" alt="AMG">
+                        <span>AMG</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="brand-section">
+                <h2>用户评价</h2>
+                <div class="reviews">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="images/avatars/user8.jpg" alt="用户头像">
+                            <div>
+                                <h4>王先生</h4>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>GT套件安装在M4上，制动力提升明显，脚感非常扎实，赛道日完全不用担心制动衰减。</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="images/avatars/user9.jpg" alt="用户头像">
+                            <div>
+                                <h4>张先生</h4>
+                                <div class="rating">★★★★★</div>
+                            </div>
+                        </div>
+                        <p>Sport系列的性价比很高，日常使用完全够用，制动距离缩短很多，关键是没有噪音。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <!-- 页脚部分相同 -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts/brand-detail.js"></script>
+    <script>
+        // 性能对比图表
+        const ctx = document.getElementById('brakeChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['制动力', '耐久性', '热衰减', '脚感', '噪音控制'],
+                datasets: [{
+                    label: '原厂制动',
+                    data: [70, 75, 65, 70, 85],
+                    backgroundColor: 'rgba(200,200,200,0.2)',
+                    borderColor: 'rgba(200,200,200,0.8)',
+                }, {
+                    label: 'Brembo升级',
+                    data: [95, 90, 85, 90, 80],
+                    backgroundColor: 'rgba(255,0,0,0.2)',
+                    borderColor: 'rgba(255,0,0,0.8)',
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,135 @@
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient);
+    padding: 2rem;
+}
+
+.auth-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-logo {
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.auth-header h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.auth-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"],
+.auth-form input[type="email"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.auth-form input:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+.remember-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-password {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.terms {
+    font-size: 0.9rem;
+}
+
+.terms a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.auth-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-form button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* 用户类型选择器样式 */
+.user-type-selector {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.user-type-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.user-type-option input[type="radio"] {
+    margin: 0;
+}
+
+.user-type-option:has(input:checked) {
+    border-color: var(--secondary-color);
+    background-color: rgba(48, 79, 254, 0.1);
+}
+
+.user-type-label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* 确保单选框和标签垂直对齐 */
+.user-type-option input[type="radio"] {
+    width: auto;
+    margin-right: 0.5rem;
+} 

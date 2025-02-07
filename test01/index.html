@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汽车合法改装推荐系统</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="CarMod+" class="logo-img">
+                <h1>CarMod<span class="plus">+</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="news.html">资讯</a></li>
+                <li><a href="index.html#featured-cases">案例</a></li>
+                <li><a href="brands.html">品牌</a></li>
+                <li><a href="shops.html">店家</a></li>
+                <li><a href="calculator.html">改装计算器</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="login.html" id="loginLink">登录</a> | 
+                <a href="register.html" id="registerLink">注册</a>
+                <span id="userInfo" style="display: none;">
+                    欢迎，<span id="username"></span>
+                    <a href="#" id="logoutBtn">退出</a>
+                </span>
+            </div>
+        </nav>
+        <div class="hero-section">
+            <h1>专业的汽车改装推荐平台</h1>
+            <p>为您提供合法、专业、个性化的改装方案</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- 改装推荐系统主体 -->
+        <section class="mod-recommender">
+            <h2><span class="icon">🚗</span> 合法改装推荐</h2>
+            <div class="recommender-form">
+                <form id="modForm">
+                    <div class="form-group">
+                        <label>选择车型</label>
+                        <div class="select-group">
+                            <select name="carCategory" id="carCategory" required>
+                                <option value="">请选择车系</option>
+                                <option value="german">德系</option>
+                                <option value="japanese">日系</option>
+                            </select>
+                            <select name="carBrand" id="carBrand" required>
+                                <option value="">请选择品牌</option>
+                            </select>
+                            <select name="carModel" id="carModel" required>
+                                <option value="">请选择型号</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>改装类型</label>
+                        <div class="mod-types">
+                            <label><input type="checkbox" name="modType" value="exterior"> 外观改装</label>
+                            <label><input type="checkbox" name="modType" value="interior"> 内饰改装</label>
+                            <label><input type="checkbox" name="modType" value="performance"> 动力改装</label>
+                            <label><input type="checkbox" name="modType" value="handling"> 操控改装</label>
+                            <label><input type="checkbox" name="modType" value="electronics"> 电子改装</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>预算范围</label>
+                        <input type="number" name="budget" placeholder="请输入预算(元)">
+                    </div>
+
+                    <button type="submit">获取推荐方案</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="mod-cases" id="featured-cases">
+            <h2><span class="icon">🏆</span> 精选改装案例</h2>
+            <div class="mod-categories">
+                <button class="category-btn active">全部</button>
+                <button class="category-btn">动力改装</button>
+                <button class="category-btn">操控改装</button>
+                <button class="category-btn">外观改装</button>
+                <button class="category-btn">内饰改装</button>
+                <button class="category-btn">赛道改装</button>
+                <button class="category-btn">日常改装</button>
+            </div>
+            <div class="cases-grid">
+                <article class="case-card">
+                    <a href="case-detail-bmw.html" class="case-link">
+                        <div class="case-image">
+                            <img src="images/cases/bmw-m3.jpg" alt="BMW M3改装案例">
+                            <span class="case-tag">德系</span>
+                        </div>
+                        <div class="case-content">
+                            <h3>BMW M3 Competition</h3>
+                            <p class="case-description">专业级赛道改装方案，包含KW避震、Akrapovic排气、碳纤维空力套件等。</p>
+                            <div class="case-details">
+                                <span class="case-budget">预算: ¥350,000</span>
+                                <span class="case-rating">评分: 4.9/5.0</span>
+                            </div>
+                            <div class="case-tags">
+                                <span>动力升级</span>
+                                <span>操控提升</span>
+                                <span>外观改装</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="case-card">
+                    <a href="case-detail-porsche.html" class="case-link">
+                        <div class="case-image">
+                            <img src="images/cases/porsche-911.jpg" alt="保时捷911改装案例">
+                            <span class="case-tag">德系</span>
+                        </div>
+                        <div class="case-content">
+                            <h3>保时捷 911 GT3</h3>
+                            <p class="case-description">街道与赛道兼顾的顶级改装方案，包含TECHART空力套件、BBS轮毂等。</p>
+                            <div class="case-details">
+                                <span class="case-budget">预算: ¥480,000</span>
+                                <span class="case-rating">评分: 5.0/5.0</span>
+                            </div>
+                            <div class="case-tags">
+                                <span>全车升级</span>
+                                <span>赛道改装</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="case-card">
+                    <a href="case-detail-toyota.html" class="case-link">
+                        <div class="case-image">
+                            <img src="images/cases/toyota-supra.jpg" alt="丰田Supra改装案例">
+                            <span class="case-tag">日系</span>
+                        </div>
+                        <div class="case-content">
+                            <h3>丰田 Supra MK5</h3>
+                            <p class="case-description">经典日系性能车改装，HKS涡轮套件、Bride赛车座椅、Volk TE37轮毂。</p>
+                            <div class="case-details">
+                                <span class="case-budget">预算: ¥280,000</span>
+                                <span class="case-rating">评分: 4.8/5.0</span>
+                            </div>
+                            <div class="case-tags">
+                                <span>动力改装</span>
+                                <span>JDM风格</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+            <div class="view-more">
+                <button class="secondary-button">查看更多案例</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">关于我们</a> |
+                <a href="#contact">联系我们</a> |
+                <a href="#terms">使用条款</a> |
+                <a href="#privacy">隐私政策</a>
+            </div>
+            <div class="copyright">
+                Copyright © 2024 CarMod+ All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html> 

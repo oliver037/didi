@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改装品牌 - CarMod+</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/brands.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <img src="images/logo.png" alt="CarMod+" class="logo-img">
+                <h1>CarMod<span class="plus">+</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#news">资讯</a></li>
+                <li><a href="#cases">案例</a></li>
+                <li><a href="brands.html" class="active">品牌</a></li>
+                <li><a href="#shops">店家</a></li>
+                <li><a href="#calculator">改装计算器</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="login.html" id="loginLink">登录</a> | 
+                <a href="register.html" id="registerLink">注册</a>
+                <span id="userInfo" style="display: none;">
+                    欢迎，<span id="username"></span>
+                    <a href="#" id="logoutBtn">退出</a>
+                </span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="brands-container">
+        <div class="brands-filter">
+            <button class="filter-btn active" data-category="all">全部品牌</button>
+            <button class="filter-btn" data-category="power">动力系统</button>
+            <button class="filter-btn" data-category="suspension">悬挂制动</button>
+            <button class="filter-btn" data-category="exhaust">进排气系统</button>
+            <button class="filter-btn" data-category="exterior">外观套件</button>
+            <button class="filter-btn" data-category="wheel">轮毂轮胎</button>
+            <button class="filter-btn" data-category="oil">化学油品</button>
+            <button class="filter-btn" data-category="equipment">汽保设备</button>
+        </div>
+
+        <div class="brands-grid">
+            <!-- 动力系统品牌 -->
+            <div class="brand-card" data-category="power">
+                <a href="brand-detail-racechip.html" class="brand-link">
+                    <img src="images/brands/raceChip.png" alt="RaceChip">
+                    <div class="brand-info">
+                        <h3>RaceChip</h3>
+                        <p>ECU升级</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="brand-card" data-category="power">
+                <a href="brand-detail-rotrex.html" class="brand-link">
+                    <img src="images/brands/rotrex.png" alt="ROTREX">
+                    <div class="brand-info">
+                        <h3>ROTREX</h3>
+                        <p>增压套件</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 悬挂制动品牌 -->
+            <div class="brand-card" data-category="suspension">
+                <a href="brand-detail-kw.html" class="brand-link">
+                    <img src="images/brands/kw.png" alt="KW">
+                    <div class="brand-info">
+                        <h3>KW</h3>
+                        <p>悬挂系统</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="brand-card" data-category="suspension">
+                <img src="images/brands/brembo.png" alt="Brembo">
+                <div class="brand-info">
+                    <h3>Brembo</h3>
+                    <p>制动系统</p>
+                </div>
+            </div>
+
+            <!-- 进排气系统品牌 -->
+            <div class="brand-card" data-category="exhaust">
+                <img src="images/brands/akrapovic.png" alt="Akrapovic">
+                <div class="brand-info">
+                    <h3>Akrapovic</h3>
+                    <p>排气系统</p>
+                </div>
+            </div>
+
+            <!-- 更多品牌卡片... -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">关于我们</a> |
+                <a href="#contact">联系我们</a> |
+                <a href="#terms">使用条款</a> |
+                <a href="#privacy">隐私政策</a>
+            </div>
+            <div class="copyright">
+                Copyright © 2024 CarMod+ All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/brands.js"></script>
+</body>
+</html> 

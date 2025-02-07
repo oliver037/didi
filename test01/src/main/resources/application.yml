@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/carmod
+
+server:
+  port: 8080
+
+jwt:
+  secret: your-secret-key
+  expiration: 86400000 # 24小时
+
+logging:
+  level:
+    org.springframework.security: DEBUG 
