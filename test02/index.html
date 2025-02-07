@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王梦琦的博客</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>王梦琦<span class="code-tag">/></span></h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="terminal-content">
+                    <p><span class="prompt">$</span> <span class="command">whoami</span></p>
+                    <p class="output">王梦琦 | Full Stack Developer</p>
+                    <p><span class="prompt">$</span> <span class="command">cat about.txt</span></p>
+                    <p class="output">热爱编程，专注于Web开发和人工智能</p>
+                    <p><span class="prompt">$</span> <span class="typing"></span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>关于我</h2>
+            <div class="about-content">
+                <div class="profile-image">
+                    <img src="images/profile.jpg" alt="王梦琦的照片">
+                </div>
+                <div class="profile-text">
+                    <div class="education">
+                        <h3><i class="fas fa-graduation-cap"></i> 教育背景</h3>
+                        <p>北京城市学院 | 大数据与互联网专业</p>
+                    </div>
+                    
+                    <div class="experience">
+                        <h3><i class="fas fa-briefcase"></i> 实习经历</h3>
+                        <div class="experience-item">
+                            <p><i class="fas fa-building"></i> 超星图书馆</p>
+                            <p class="position">后端开发工程师</p>
+                        </div>
+                        <div class="experience-item">
+                            <p><i class="fas fa-building"></i> 神州数码（滴滴外包）</p>
+                            <p class="position">运维工程师</p>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h3>技术栈</h3>
+                        <div class="tech-tags">
+                            <span class="tag"><i class="fab fa-java"></i> Java</span>
+                            <span class="tag"><i class="fas fa-leaf"></i> Spring Boot</span>
+                            <span class="tag"><i class="fas fa-database"></i> MySQL</span>
+                            <span class="tag"><i class="fas fa-server"></i> Redis</span>
+                            <span class="tag"><i class="fas fa-cloud"></i> MQ</span>
+                            <span class="tag"><i class="fab fa-docker"></i> Docker</span>
+                            <span class="tag"><i class="fas fa-network-wired"></i> Nginx</span>
+                            <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
+                        </div>
+                    </div>
+                    <p>👨‍💻 全栈开发工程师，热衷于探索新技术</p>
+                    <p>🚀 目前专注于Web开发和人工智能领域</p>
+                    <p>📚 持续学习，不断进步</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>项目展示</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-car"></i>
+                        <h3>汽车改装推荐系统</h3>
+                    </div>
+                    <p>基于深度学习的智能汽车改装方案推荐系统，确保改装合法性的同时提供最优化方案</p>
+                    <div class="project-features">
+                        <span class="feature"><i class="fas fa-check"></i> 合法性检测</span>
+                        <span class="feature"><i class="fas fa-check"></i> 性能优化</span>
+                        <span class="feature"><i class="fas fa-check"></i> 成本估算</span>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="github-link"><i class="fab fa-github"></i> 源码</a>
+                        <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> 演示</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-database"></i>
+                        <h3>改装配件数据库</h3>
+                    </div>
+                    <p>全面的汽车改装配件数据库，包含合法性信息、兼容性数据和用户评价</p>
+                    <div class="project-features">
+                        <span class="feature"><i class="fas fa-check"></i> 实时更新</span>
+                        <span class="feature"><i class="fas fa-check"></i> 兼容性检查</span>
+                        <span class="feature"><i class="fas fa-check"></i> 用户反馈</span>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">Vue.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="github-link"><i class="fab fa-github"></i> 源码</a>
+                        <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> 演示</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>技术博客</h2>
+            <div class="blog-grid">
+                <article>
+                    <h3>深度学习在汽车改装推荐中的应用</h3>
+                    <p>探讨如何利用深度学习技术构建个性化的汽车改装推荐系统...</p>
+                    <div class="article-meta">
+                        <time>2024-03-21</time>
+                        <span class="tag">深度学习</span>
+                        <span class="tag">推荐系统</span>
+                    </div>
+                    <a href="blogs/deep-learning-recommendation.html" class="read-more">阅读全文 →</a>
+                </article>
+                <article>
+                    <h3>协同过滤在改装配件匹配中的应用</h3>
+                    <p>详解基于用户行为的协同过滤算法如何提升配件匹配准确度...</p>
+                    <div class="article-meta">
+                        <time>2024-03-20</time>
+                        <span class="tag">机器学习</span>
+                        <span class="tag">协同过滤</span>
+                    </div>
+                    <a href="blogs/collaborative-filtering.html" class="read-more">阅读全文 →</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>联系方式</h2>
+            <div class="contact-info">
+                <div class="contact-links">
+                    <a href="mailto:1419235897@qq.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="tel:15811534195" class="contact-link">
+                        <i class="fas fa-phone"></i> 15811534195
+                    </a>
+                    <a href="https://github.com/oliver037" class="contact-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 王梦琦</p>
+            <p class="code-comment">// Made with ❤️ and ☕️</p>
+        </div>
+    </footer>
+</body>
+</html> 

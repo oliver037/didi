@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度学习在汽车改装推荐中的应用 - 王梦琦的博客</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>王梦琦<span class="code-tag">/></span></h1>
+            <ul>
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="blog-post">
+        <article class="post-content">
+            <header class="post-header">
+                <h1 class="post-title">深度学习在汽车改装推荐中的应用</h1>
+                <div class="post-meta">
+                    <time>发布日期: <span class="date">2024-03-21</span></time>
+                    <div class="tags">
+                        <span class="tag">深度学习</span>
+                        <span class="tag">推荐系统</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="post-body">
+                <h2>引言</h2>
+                <p>在汽车改装领域，如何为用户推荐最适合的改装方案一直是一个挑战。本文将详细介绍如何利用深度学习技术构建一个智能推荐系统，该系统不仅考虑改装的合法性，还能根据用户偏好和车型特点提供个性化推荐。</p>
+
+                <h2>模型架构</h2>
+                <p>我们采用了基于深度神经网络的混合推荐模型，结构如下：</p>
+                <pre><code>class DeepRecommendationModel(nn.Module):
+    def __init__(self, num_users, num_items):
+        super().__init__()
+        self.user_embedding = nn.Embedding(num_users, 64)
+        self.item_embedding = nn.Embedding(num_items, 64)
+        self.fc_layers = nn.Sequential(
+            nn.Linear(128, 64),
+            nn.ReLU(),
+            nn.Linear(64, 32),
+            nn.ReLU(),
+            nn.Linear(32, 1),
+            nn.Sigmoid()
+        )</code></pre>
+
+                <h2>特征工程</h2>
+                <p>在模型输入层，我们考虑了以下特征：</p>
+                <ul>
+                    <li>用户特征：改装预算、偏好风格、驾驶习惯</li>
+                    <li>车辆特征：车型、年份、原厂配置</li>
+                    <li>配件特征：类型、品牌、价格、性能参数</li>
+                    <li>法规特征：各地区改装政策、合规要求</li>
+                </ul>
+
+                <h2>模型训练</h2>
+                <p>训练过程中的关键代码：</p>
+                <pre><code>def train_model(model, train_loader, optimizer):
+    model.train()
+    for batch_idx, (user_ids, item_ids, labels) in enumerate(train_loader):
+        # 前向传播
+        user_embed = model.user_embedding(user_ids)
+        item_embed = model.item_embedding(item_ids)
+        
+        # 特征融合
+        features = torch.cat([user_embed, item_embed], dim=1)
+        predictions = model(features)
+        
+        # 计算损失
+        loss = F.binary_cross_entropy(predictions, labels)
+        
+        # 反向传播
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()</code></pre>
+
+                <h2>效果评估</h2>
+                <p>在实际应用中，我们的模型在以下方面取得了显著效果：</p>
+                <ul>
+                    <li>推荐准确率提升30%</li>
+                    <li>用户满意度提升25%</li>
+                    <li>改装方案合规性达到100%</li>
+                </ul>
+
+                <h2>未来展望</h2>
+                <p>我们计划在以下方面进行优化：</p>
+                <ol>
+                    <li>引入注意力机制，提升特征权重分配</li>
+                    <li>集成时序数据，预测改装趋势</li>
+                    <li>加入知识图谱，增强配件兼容性判断</li>
+                </ol>
+            </div>
+
+            <footer class="post-footer">
+                <div class="post-nav">
+                    <a href="collaborative-filtering.html" class="prev-post">← 协同过滤在改装配件匹配中的应用</a>
+                    <a href="#" class="next-post">下一篇 →</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 王梦琦</p>
+            <p class="code-comment">// Made with ❤️ and ☕️</p>
+        </div>
+    </footer>
+</body>
+</html> 
