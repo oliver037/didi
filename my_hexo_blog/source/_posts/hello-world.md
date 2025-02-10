@@ -1,118 +1,140 @@
 ---
-title: 协同过滤在改装配件匹配中的应用
-date: 2024-03-20
+title: 关于我
+date: 2024-03-21
+categories: 
+- 个人简介
 tags:
-- 机器学习
-- 协同过滤
-- Python
+- 后端开发
+- Java
+- Spring Boot
 ---
 
-## 引言
+## $ whoami
 
-在汽车改装领域，如何准确匹配用户与改装配件是一个关键问题。本文将介绍如何利用协同过滤算法，基于用户的历史行为和偏好，实现精准的配件推荐。
-
-## 基于用户的协同过滤
-
-我们首先实现了基于用户的协同过滤算法（User-Based Collaborative Filtering）：
-
-```python
-def calculate_user_similarity(user_item_matrix):
-    """计算用户之间的相似度"""
-    user_similarity = cosine_similarity(user_item_matrix)
-    return pd.DataFrame(
-        user_similarity,
-        index=user_item_matrix.index,
-        columns=user_item_matrix.index
-    )
-
-def get_user_recommendations(user_id, user_item_matrix, user_similarity, n_items=5):
-    """为用户生成推荐"""
-    # 获取相似用户
-    similar_users = user_similarity[user_id].sort_values(ascending=False)[1:6]
-    
-    # 获取这些用户喜欢的商品
-    recommendations = defaultdict(float)
-    for similar_user, similarity in similar_users.items():
-        for item in user_item_matrix.columns:
-            if user_item_matrix.loc[similar_user, item] > 0:
-                recommendations[item] += similarity * user_item_matrix.loc[similar_user, item]
-    
-    return sorted(recommendations.items(), key=lambda x: x[1], reverse=True)[:n_items]
+```bash
+> whoami
+王梦琦 | Full Stack Developer
+> cat about.txt
+热爱编程，专注于Web开发和人工智能
 ```
 
-## 基于物品的协同过滤
+## 教育背景
 
-为了提高推荐的准确性，我们同时实现了基于物品的协同过滤（Item-Based Collaborative Filtering）：
-
-```python
-class ItemBasedCF:
-    def __init__(self, n_neighbors=5):
-        self.n_neighbors = n_neighbors
-        self.item_similarity_matrix = None
-
-    def fit(self, user_item_matrix):
-        # 计算物品相似度矩阵
-        self.item_similarity_matrix = cosine_similarity(user_item_matrix.T)
-        
-    def recommend(self, user_id, user_item_matrix, n_recommendations=5):
-        # 获取用户已有的配件
-        user_items = user_item_matrix.loc[user_id]
-        user_items = user_items[user_items > 0]
-        
-        # 计算推荐分数
-        scores = defaultdict(float)
-        for item, rating in user_items.items():
-            similar_items = self.get_similar_items(item)
-            for similar_item, similarity in similar_items:
-                if similar_item not in user_items:
-                    scores[similar_item] += similarity * rating
-        
-        return sorted(scores.items(), key=lambda x: x[1], reverse=True)[:n_recommendations]
+```yaml
+university: 北京城市学院
+major: 大数据与互联网专业
+duration: 2020-2024
 ```
 
-## 特征增强
+## 实习经历
 
-为了提高推荐的准确性，我们在协同过滤中加入了以下特征：
-
-- 配件兼容性矩阵
-- 用户改装预算
-- 车型特征向量
-- 改装风格偏好
-
-## 冷启动问题解决
-
-对于新用户和新配件，我们采用了以下策略：
-
-```python
-def handle_cold_start(user_data, item_data):
-    # 基于内容的推荐
-    content_features = extract_content_features(item_data)
-    
-    # 计算配件相似度
-    item_similarity = cosine_similarity(content_features)
-    
-    # 基于规则的初始推荐
-    initial_recommendations = generate_rule_based_recommendations(
-        user_data['car_model'],
-        user_data['budget'],
-        user_data['style_preference']
-    )
-    
-    return initial_recommendations
+### 超星图书馆
+```json
+{
+  "position": "后端开发工程师",
+  "duration": "2023.06 - 2023.09",
+  "responsibilities": [
+    "参与核心业务模块开发",
+    "优化系统性能",
+    "数据库设计与维护"
+  ]
+}
 ```
 
-## 性能优化
+### 神州数码（滴滴外包）
+```json
+{
+  "position": "运维工程师",
+  "duration": "2023.09 - 2023.12",
+  "responsibilities": [
+    "系统运维",
+    "服务器管理",
+    "监控系统维护"
+  ]
+}
+```
 
-在实际应用中，我们采用了以下优化措施：
+## 技术栈
 
-1. 使用Redis缓存热门推荐结果
-2. 采用增量更新策略
-3. 实现了分布式计算框架
+```java
+public class TechStack {
+    private final String[] backend = {
+        "Java", "Spring Boot", "MyBatis"
+    };
+    
+    private final String[] database = {
+        "MySQL", "Redis", "MongoDB"
+    };
+    
+    private final String[] devops = {
+        "Docker", "Nginx", "Jenkins"
+    };
+    
+    private final String[] tools = {
+        "Git", "Maven", "IDEA"
+    };
+}
+```
 
-## 效果验证
+## 项目经验
 
-经过实际测试，系统在以下指标上都取得了显著提升：
+### 汽车改装推荐系统
+```typescript
+interface Project {
+  name: string;
+  description: string;
+  technologies: string[];
+  features: string[];
+}
 
-- 配件匹配准确率：85%
-- 用户采纳率：提升40%
-- 系统响应时间：<100ms
+const project: Project = {
+  name: "汽车改装推荐系统",
+  description: "基于深度学习的智能推荐系统",
+  technologies: [
+    "Spring Boot",
+    "Python",
+    "TensorFlow",
+    "MySQL"
+  ],
+  features: [
+    "智能推荐算法",
+    "合法性检测",
+    "性能优化",
+    "用户行为分析"
+  ]
+};
+```
+
+## 联系方式
+
+```python
+contact_info = {
+    "email": "1419235897@qq.com",
+    "phone": "15811534195",
+    "github": "https://github.com/oliver037"
+}
+```
+
+## 个人特点
+
+```typescript
+const traits: string[] = [
+    "热爱技术，持续学习",
+    "良好的团队协作能力",
+    "注重代码质量",
+    "善于解决问题"
+];
+```
+
+## 职业规划
+
+```go
+func careerPlan() []string {
+    return []string{
+        "深入研究分布式系统",
+        "提升架构设计能力",
+        "探索云原生技术",
+        "贡献开源项目"
+    }
+}
+```

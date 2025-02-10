@@ -3,13 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: wmq nb  #标题
 subtitle: ''
-description: ''
+description: 选择有时候比努力更重要     #简介或者格言
 keywords:
-author: John Doe
-language: en
-timezone: ''
+author: oliver琦     #作者
+language: zh-CN     #主题语言
+timezone: Asia/Shanghai    #中国的时区
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next   #主题改为next
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -96,7 +101,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+#theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
