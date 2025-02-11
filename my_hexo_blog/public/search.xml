@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>关于我</title>
+    <url>/2024/03/20/about/</url>
+    <content><![CDATA[<h2 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h2><p>(这里写您的个人介绍)</p>
+<h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2><ul>
+<li>编程语言：</li>
+<li>框架：</li>
+<li>工具：</li>
+</ul>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>GitHub: <a href="https://github.com/oliver037">oliver037</a></li>
+<li>Email: <a href="mailto:&#x79;&#x6f;&#117;&#x72;&#45;&#x65;&#x6d;&#x61;&#105;&#108;&#64;&#x64;&#111;&#109;&#x61;&#x69;&#110;&#46;&#x63;&#111;&#x6d;">&#x79;&#x6f;&#117;&#x72;&#45;&#x65;&#x6d;&#x61;&#105;&#108;&#64;&#x64;&#111;&#109;&#x61;&#x69;&#110;&#46;&#x63;&#111;&#x6d;</a></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>协同过滤在汽车改装推荐中的应用</title>
+    <url>/2025/02/09/collaborative-filtering/</url>
+    <content><![CDATA[<div class="note default">
+            <h3 id="文章导航"><a href="#文章导航" class="headerlink" title="文章导航"></a>文章导航</h3><ul><li><a href="/">返回首页</a></li><li><a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">查看更多技术文章</a></li></ul><h3 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h3><ul><li><a href="/2025/02/10/data-warehouse-etl/">数据仓库ETL流程设计与实现</a></li></ul>
+          </div>
+
+<div class="note info">
+            <p>本文详细介绍如何在汽车改装领域应用协同过滤算法，实现个性化的配件推荐。</p>
+          </div>
+
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><div class="note primary">
+            <p>协同过滤算法主要分为两类：</p><ol><li>基于用户的协同过滤（User-Based CF）</li><li>基于物品的协同过滤（Item-Based CF）</li></ol>
+          </div>
+
+<h2 id="基于用户的协同过滤实现"><a href="#基于用户的协同过滤实现" class="headerlink" title="基于用户的协同过滤实现"></a>基于用户的协同过滤实现</h2><h3 id="相似度计算"><a href="#相似度计算" class="headerlink" title="相似度计算"></a>相似度计算</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">calculate_user_similarity</span>(<span class="params">user_item_matrix</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;计算用户之间的相似度&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 使用余弦相似度</span></span><br><span class="line">    user_similarity = cosine_similarity(user_item_matrix)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 转换为DataFrame便于查询</span></span><br><span class="line">    similarity_df = pd.DataFrame(</span><br><span class="line">        user_similarity,</span><br><span class="line">        index=user_item_matrix.index,</span><br><span class="line">        columns=user_item_matrix.index</span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> similarity_df</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_similar_users</span>(<span class="params">user_id, user_similarity, n=<span class="number">5</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;获取最相似的用户&quot;&quot;&quot;</span></span><br><span class="line">    similar_users = user_similarity[user_id].sort_values(</span><br><span class="line">        ascending=<span class="literal">False</span></span><br><span class="line">    )[<span class="number">1</span>:n+<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> similar_users</span><br></pre></td></tr></table></figure>
+
+<h3 id="推荐生成"><a href="#推荐生成" class="headerlink" title="推荐生成"></a>推荐生成</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">generate_recommendations</span>(<span class="params">user_id, similar_users, user_item_matrix</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;基于相似用户生成推荐&quot;&quot;&quot;</span></span><br><span class="line">    recommendations = defaultdict(<span class="built_in">float</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> similar_user, similarity <span class="keyword">in</span> similar_users.items():</span><br><span class="line">        <span class="comment"># 获取相似用户的评分记录</span></span><br><span class="line">        user_ratings = user_item_matrix.loc[similar_user]</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 计算加权评分</span></span><br><span class="line">        <span class="keyword">for</span> item, rating <span class="keyword">in</span> user_ratings.items():</span><br><span class="line">            <span class="keyword">if</span> rating &gt; <span class="number">0</span>:  <span class="comment"># 只考虑正面评价</span></span><br><span class="line">                recommendations[item] += similarity * rating</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 排序并返回推荐结果</span></span><br><span class="line">    sorted_recommendations = <span class="built_in">sorted</span>(</span><br><span class="line">        recommendations.items(),</span><br><span class="line">        key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>],</span><br><span class="line">        reverse=<span class="literal">True</span></span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> sorted_recommendations</span><br></pre></td></tr></table></figure>
+
+<h2 id="基于物品的协同过滤实现"><a href="#基于物品的协同过滤实现" class="headerlink" title="基于物品的协同过滤实现"></a>基于物品的协同过滤实现</h2><h3 id="物品相似度计算"><a href="#物品相似度计算" class="headerlink" title="物品相似度计算"></a>物品相似度计算</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ItemBasedCF</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, n_neighbors=<span class="number">5</span></span>):</span><br><span class="line">        <span class="variable language_">self</span>.n_neighbors = n_neighbors</span><br><span class="line">        <span class="variable language_">self</span>.item_similarity_matrix = <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fit</span>(<span class="params">self, user_item_matrix</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;计算物品相似度矩阵&quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 转置矩阵，计算物品间的相似度</span></span><br><span class="line">        <span class="variable language_">self</span>.item_similarity_matrix = cosine_similarity(</span><br><span class="line">            user_item_matrix.T</span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 转换为DataFrame</span></span><br><span class="line">        <span class="variable language_">self</span>.item_similarity_matrix = pd.DataFrame(</span><br><span class="line">            <span class="variable language_">self</span>.item_similarity_matrix,</span><br><span class="line">            index=user_item_matrix.columns,</span><br><span class="line">            columns=user_item_matrix.columns</span><br><span class="line">        )</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">recommend</span>(<span class="params">self, user_id, user_item_matrix</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;为用户生成推荐&quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 获取用户已有的配件</span></span><br><span class="line">        user_items = user_item_matrix.loc[user_id]</span><br><span class="line">        user_items = user_items[user_items &gt; <span class="number">0</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 计算推荐分数</span></span><br><span class="line">        recommendations = defaultdict(<span class="built_in">float</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> item, rating <span class="keyword">in</span> user_items.items():</span><br><span class="line">            <span class="comment"># 获取相似物品</span></span><br><span class="line">            similar_items = <span class="variable language_">self</span>.item_similarity_matrix[item]</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 计算加权评分</span></span><br><span class="line">            <span class="keyword">for</span> similar_item, similarity <span class="keyword">in</span> similar_items.items():</span><br><span class="line">                <span class="keyword">if</span> similar_item <span class="keyword">not</span> <span class="keyword">in</span> user_items:</span><br><span class="line">                    recommendations[similar_item] += similarity * rating</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">sorted</span>(</span><br><span class="line">            recommendations.items(),</span><br><span class="line">            key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>],</span><br><span class="line">            reverse=<span class="literal">True</span></span><br><span class="line">        )</span><br></pre></td></tr></table></figure>
+
+<h2 id="冷启动问题解决"><a href="#冷启动问题解决" class="headerlink" title="冷启动问题解决"></a>冷启动问题解决</h2><h3 id="基于内容的推荐"><a href="#基于内容的推荐" class="headerlink" title="基于内容的推荐"></a>基于内容的推荐</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">content_based_recommendation</span>(<span class="params">user_profile, items_features</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;基于内容的推荐&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 提取用户特征</span></span><br><span class="line">    user_features = extract_user_features(user_profile)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算物品相似度</span></span><br><span class="line">    similarities = cosine_similarity(</span><br><span class="line">        user_features.reshape(<span class="number">1</span>, -<span class="number">1</span>),</span><br><span class="line">        items_features</span><br><span class="line">    )</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 返回最相似的物品</span></span><br><span class="line">    <span class="keyword">return</span> np.argsort(similarities[<span class="number">0</span>])[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="混合推荐策略"><a href="#混合推荐策略" class="headerlink" title="混合推荐策略"></a>混合推荐策略</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hybrid_recommendation</span>(<span class="params">user_id, user_profile</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;混合推荐策略&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> is_new_user(user_id):</span><br><span class="line">        <span class="comment"># 新用户使用基于内容的推荐</span></span><br><span class="line">        recommendations = content_based_recommendation(</span><br><span class="line">            user_profile,</span><br><span class="line">            items_features</span><br><span class="line">        )</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 老用户使用协同过滤</span></span><br><span class="line">        cf_recommendations = collaborative_filtering(user_id)</span><br><span class="line">        content_recommendations = content_based_recommendation(</span><br><span class="line">            user_profile,</span><br><span class="line">            items_features</span><br><span class="line">        )</span><br><span class="line">        <span class="comment"># 融合两种推荐结果</span></span><br><span class="line">        recommendations = merge_recommendations(</span><br><span class="line">            cf_recommendations,</span><br><span class="line">            content_recommendations</span><br><span class="line">        )</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> recommendations</span><br></pre></td></tr></table></figure>
+
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><ol>
+<li><p>数据预处理</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">preprocess_data</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;数据预处理优化&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 使用稀疏矩阵存储</span></span><br><span class="line">    sparse_matrix = csr_matrix(user_item_matrix)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 归一化处理</span></span><br><span class="line">    normalized_matrix = normalize(sparse_matrix)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> normalized_matrix</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>计算优化</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">optimize_similarity_calculation</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;相似度计算优化&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 使用近似最近邻搜索</span></span><br><span class="line">    ann_index = AnnoyIndex(f=vector_dim)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 批量计算相似度</span></span><br><span class="line">    <span class="keyword">with</span> ThreadPoolExecutor() <span class="keyword">as</span> executor:</span><br><span class="line">        similarities = <span class="built_in">list</span>(executor.<span class="built_in">map</span>(</span><br><span class="line">            calculate_similarity,</span><br><span class="line">            vectors</span><br><span class="line">        ))</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="效果评估"><a href="#效果评估" class="headerlink" title="效果评估"></a>效果评估</h2><div class="note success">
+            <p>系统上线后取得了显著效果：</p><ul><li>推荐准确率：85%</li><li>用户采纳率：提升40%</li><li>系统响应时间：&lt;100ms</li></ul>
+          </div>
+
+<h2 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h2><ol>
+<li>数据质量至关重要</li>
+<li>需要合理处理冷启动问题</li>
+<li>性能优化不能忽视</li>
+<li>持续监控和改进很重要</li>
+</ol>
+<div class="note info">
+            <h3 id="分享与交流"><a href="#分享与交流" class="headerlink" title="分享与交流"></a>分享与交流</h3><p>如果您觉得本文对您有帮助，欢迎：</p><ul><li>在下方评论区留言讨论</li><li>分享给更多朋友</li><li>关注我的 <a href="https://github.com/oliver037">GitHub</a></li></ul>
+          </div> ]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>推荐系统</tag>
+        <tag>机器学习</tag>
+        <tag>Python</tag>
+        <tag>协同过滤</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据仓库ETL流程设计与实现</title>
+    <url>/2025/02/10/data-warehouse-etl/</url>
+    <content><![CDATA[<div class="note default">
+            <h3 id="文章导航"><a href="#文章导航" class="headerlink" title="文章导航"></a>文章导航</h3><ul><li><a href="/">返回首页</a></li><li><a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">查看更多技术文章</a></li></ul><h3 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h3><ul><li><a href="/2025/02/09/collaborative-filtering/">协同过滤在汽车改装推荐中的应用</a></li></ul>
+          </div>
+
+<div class="note info">
+            <p>本文详细介绍数据仓库ETL流程的设计与实现，包括数据抽取、转换、加载的最佳实践。</p>
+          </div>
+
+<h2 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h2><div class="note primary">
+            <p>整体采用分层架构：</p><ol><li>ODS层：原始数据层</li><li>DWD层：明细数据层</li><li>DWS层：服务数据层</li><li>ADS层：应用数据层</li></ol>
+          </div>
+
+<h2 id="ETL流程实现"><a href="#ETL流程实现" class="headerlink" title="ETL流程实现"></a>ETL流程实现</h2><h3 id="数据抽取"><a href="#数据抽取" class="headerlink" title="数据抽取"></a>数据抽取</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">extract_data</span>(<span class="params">source_config</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    数据抽取模块</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 建立数据源连接</span></span><br><span class="line">        conn = create_connection(source_config)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 增量抽取逻辑</span></span><br><span class="line">        last_etl_time = get_last_etl_time()</span><br><span class="line">        sql = <span class="string">f&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">            SELECT * FROM source_table </span></span><br><span class="line"><span class="string">            WHERE update_time &gt; &#x27;<span class="subst">&#123;last_etl_time&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 执行抽取</span></span><br><span class="line">        df = pd.read_sql(sql, conn)</span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        logging.error(<span class="string">f&quot;数据抽取失败: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">transform_data</span>(<span class="params">df</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    数据清洗转换</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 数据类型转换</span></span><br><span class="line">    df[<span class="string">&#x27;create_time&#x27;</span>] = pd.to_datetime(df[<span class="string">&#x27;create_time&#x27;</span>])</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 空值处理</span></span><br><span class="line">    df[<span class="string">&#x27;category&#x27;</span>] = df[<span class="string">&#x27;category&#x27;</span>].fillna(<span class="string">&#x27;未分类&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 业务规则转换</span></span><br><span class="line">    df[<span class="string">&#x27;status&#x27;</span>] = df[<span class="string">&#x27;status&#x27;</span>].<span class="built_in">map</span>(&#123;</span><br><span class="line">        <span class="number">0</span>: <span class="string">&#x27;待处理&#x27;</span>,</span><br><span class="line">        <span class="number">1</span>: <span class="string">&#x27;处理中&#x27;</span>,</span><br><span class="line">        <span class="number">2</span>: <span class="string">&#x27;已完成&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据加载"><a href="#数据加载" class="headerlink" title="数据加载"></a>数据加载</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_data</span>(<span class="params">df, target_config</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    数据加载到目标表</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 建立目标库连接</span></span><br><span class="line">        engine = create_engine(target_config)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 分批写入</span></span><br><span class="line">        df.to_sql(</span><br><span class="line">            <span class="string">&#x27;target_table&#x27;</span>,</span><br><span class="line">            engine,</span><br><span class="line">            if_exists=<span class="string">&#x27;append&#x27;</span>,</span><br><span class="line">            index=<span class="literal">False</span>,</span><br><span class="line">            chunksize=<span class="number">1000</span></span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        logging.error(<span class="string">f&quot;数据加载失败: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="调度管理"><a href="#调度管理" class="headerlink" title="调度管理"></a>调度管理</h2><p>使用Airflow进行任务调度：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> airflow <span class="keyword">import</span> DAG</span><br><span class="line"><span class="keyword">from</span> airflow.operators.python_operator <span class="keyword">import</span> PythonOperator</span><br><span class="line"></span><br><span class="line">dag = DAG(</span><br><span class="line">    <span class="string">&#x27;etl_pipeline&#x27;</span>,</span><br><span class="line">    schedule_interval=<span class="string">&#x27;0 2 * * *&#x27;</span>,  <span class="comment"># 每天凌晨2点执行</span></span><br><span class="line">    start_date=datetime(<span class="number">2024</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">extract_task = PythonOperator(</span><br><span class="line">    task_id=<span class="string">&#x27;extract_data&#x27;</span>,</span><br><span class="line">    python_callable=extract_data,</span><br><span class="line">    dag=dag</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">transform_task = PythonOperator(</span><br><span class="line">    task_id=<span class="string">&#x27;transform_data&#x27;</span>,</span><br><span class="line">    python_callable=transform_data,</span><br><span class="line">    dag=dag</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">load_task = PythonOperator(</span><br><span class="line">    task_id=<span class="string">&#x27;load_data&#x27;</span>,</span><br><span class="line">    python_callable=load_data,</span><br><span class="line">    dag=dag</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">extract_task &gt;&gt; transform_task &gt;&gt; load_task</span><br></pre></td></tr></table></figure>
+
+<h2 id="监控告警"><a href="#监控告警" class="headerlink" title="监控告警"></a>监控告警</h2><p>实现了完整的监控告警机制：</p>
+<ol>
+<li><p>数据质量监控</p>
+<ul>
+<li>空值检查</li>
+<li>重复值检查</li>
+<li>数据一致性校验</li>
+</ul>
+</li>
+<li><p>任务执行监控</p>
+<ul>
+<li>运行状态</li>
+<li>执行时长</li>
+<li>错误日志</li>
+</ul>
+</li>
+<li><p>告警通知</p>
+<ul>
+<li>邮件通知</li>
+<li>企业微信通知</li>
+<li>短信通知</li>
+</ul>
+</li>
+</ol>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><p>主要从以下几个方面进行了优化：</p>
+<ol>
+<li>分批处理</li>
+<li>并行计算</li>
+<li>索引优化</li>
+<li>资源控制</li>
+</ol>
+<h2 id="实践总结"><a href="#实践总结" class="headerlink" title="实践总结"></a>实践总结</h2><ol>
+<li>保证数据质量是首要任务</li>
+<li>合理的分层设计很重要</li>
+<li>监控告警要及时准确</li>
+<li>持续优化性能指标</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>ETL</tag>
+        <tag>数据仓库</tag>
+        <tag>Airflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于我</title>
+    <url>/2025/02/11/hello-world/</url>
+    <content><![CDATA[<div class="note info">
+            <blockquote><p>脚踏实地，持续精进，用技术改变生活</p></blockquote>
+          </div>
+
+<h2 id="终端简介"><a href="#终端简介" class="headerlink" title=" 终端简介"></a><i class="fas fa-terminal"></i> 终端简介</h2><figure class="highlight bash"><figcaption><span>Terminal</span></figcaption><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">whoami</span></span><br><span class="line">王梦琦 | Full Stack Developer</span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">cat</span> about.txt</span><br><span class="line">热爱编程，专注于Web开发和人工智能领域</span><br><span class="line">擅长后端开发，对分布式系统和云原生技术充满热情</span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">ls</span> skills/</span><br><span class="line">backend/  database/  devops/  tools/</span><br></pre></td></tr></table></figure>
+
+<h2 id="教育背景"><a href="#教育背景" class="headerlink" title=" 教育背景"></a><i class="fas fa-graduation-cap"></i> 教育背景</h2><div class="note default">
+            <p><strong>北京城市学院</strong> | 大数据与互联网专业 | 2021-2025</p><ul><li>主修课程：Java编程、数据结构、计算机网络、数据库系统</li><li>GPA：3.8&#x2F;4.0</li></ul>
+          </div>
+
+<h2 id="实习经历"><a href="#实习经历" class="headerlink" title=" 实习经历"></a><i class="fas fa-briefcase"></i> 实习经历</h2><div class="tabs" id="experience"><ul class="nav-tabs"><li class="tab active"><a href="#experience-1">超星图书馆</a></li><li class="tab"><a href="#experience-2">神州数码（滴滴外包）</a></li></ul><div class="tab-content"><div class="tab-pane active" id="experience-1"><figure class="highlight json"><figcaption><span>后端开发工程师 | 2023.07 - 2023.09</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;responsibilities&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;参与核心业务模块开发&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;优化系统性能&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;数据库设计与维护&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;achievements&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;系统性能提升30%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;重构核心模块&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;部分接口实现&quot;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="experience-2"><figure class="highlight json"><figcaption><span>运维工程师 | 2024.08 - 2025.01</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;responsibilities&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;系统运维&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;服务器管理&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;监控系统维护&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;achievements&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;构建监控平台&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;优化部署流程&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;提升系统稳定性&quot;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div></div></div>
+
+<h2 id="技术栈"><a href="#技术栈" class="headerlink" title=" 技术栈"></a><i class="fas fa-code"></i> 技术栈</h2><div class="tabs" id="tech-stack"><ul class="nav-tabs"><li class="tab active"><a href="#tech-stack-1">后端开发</a></li><li class="tab"><a href="#tech-stack-2">数据库</a></li><li class="tab"><a href="#tech-stack-3">运维工具</a></li><li class="tab"><a href="#tech-stack-4">开发工具</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tech-stack-1"><ul>
+<li>Java &#x2F; Spring Boot &#x2F; MyBatis</li>
+<li>RESTful API 设计</li>
+<li>微服务架构</li>
+</ul></div><div class="tab-pane" id="tech-stack-2"><ul>
+<li>MySQL &#x2F; Redis &#x2F; MongoDB</li>
+<li>数据库优化</li>
+<li>缓存策略</li>
+</ul></div><div class="tab-pane" id="tech-stack-3"><ul>
+<li>Docker &#x2F; Nginx &#x2F; Jenkins</li>
+<li>Linux 系统管理</li>
+<li>CI&#x2F;CD 流程</li>
+</ul></div><div class="tab-pane" id="tech-stack-4"><ul>
+<li>Git &#x2F; Maven &#x2F; IDEA</li>
+<li>Postman &#x2F; Swagger</li>
+<li>JMeter</li>
+</ul></div></div></div>
+
+<h2 id="项目经验"><a href="#项目经验" class="headerlink" title=" 项目经验"></a><i class="fas fa-project-diagram"></i> 项目经验</h2><div class="note success">
+            <h3 id="数据仓库ETL平台"><a href="#数据仓库ETL平台" class="headerlink" title="数据仓库ETL平台"></a>数据仓库ETL平台</h3><p><strong>技术栈：</strong> Python, Airflow, MySQL, Redis, Kafka</p><p><strong>核心功能：</strong></p><ul><li>数据抽取转换加载</li><li>任务调度管理</li><li>数据质量监控</li><li>性能优化管理</li></ul><p><strong>项目亮点：</strong></p><ul><li>处理效率提升200%</li><li>数据准确率达99.9%</li><li>监控覆盖率100%</li></ul>
+          </div>
+
+<div class="note success">
+            <h3 id="汽车改装推荐系统"><a href="#汽车改装推荐系统" class="headerlink" title="汽车改装推荐系统"></a>汽车改装推荐系统</h3><p><strong>技术栈：</strong> Spring Boot, Python, TensorFlow, MySQL</p><p><strong>核心功能：</strong></p><ul><li>智能推荐算法</li><li>合法性检测</li><li>性能优化</li><li>用户行为分析</li></ul><p><strong>项目亮点：</strong></p><ul><li>推荐准确率提升30%</li><li>系统响应时间优化50%</li><li>用户满意度提升40%</li></ul>
+          </div>
+
+<h2 id="个人特点"><a href="#个人特点" class="headerlink" title=" 个人特点"></a><i class="fas fa-user-circle"></i> 个人特点</h2><div class="tabs" id="traits"><ul class="nav-tabs"><li class="tab active"><a href="#traits-1">技术热情</a></li><li class="tab"><a href="#traits-2">团队协作</a></li><li class="tab"><a href="#traits-3">代码品质</a></li></ul><div class="tab-content"><div class="tab-pane active" id="traits-1"><ul>
+<li>热爱技术，持续学习</li>
+<li>关注技术发展趋势</li>
+<li>积极参与技术社区</li>
+</ul></div><div class="tab-pane" id="traits-2"><ul>
+<li>良好的沟通能力</li>
+<li>积极主动的工作态度</li>
+<li>优秀的问题解决能力</li>
+</ul></div><div class="tab-pane" id="traits-3"><ul>
+<li>注重代码质量</li>
+<li>追求优雅的设计</li>
+<li>编写完善的文档</li>
+</ul></div></div></div>
+
+<h2 id="职业规划"><a href="#职业规划" class="headerlink" title=" 职业规划"></a><i class="fas fa-road"></i> 职业规划</h2><div class="note primary">
+            <ol><li>深入研究分布式系统</li><li>提升架构设计能力</li><li>探索云原生技术</li><li>贡献开源项目</li></ol>
+          </div>
+
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title=" 联系方式"></a><i class="fas fa-address-card"></i> 联系方式</h2><div class="tabs" id="contact"><ul class="nav-tabs"><li class="tab active"><a href="#contact-1">邮箱</a></li><li class="tab"><a href="#contact-2">电话</a></li><li class="tab"><a href="#contact-3">GitHub</a></li></ul><div class="tab-content"><div class="tab-pane active" id="contact-1"><p><i class="fas fa-envelope"></i> <a href="mailto:&#49;&#x34;&#x31;&#57;&#x32;&#51;&#x35;&#x38;&#57;&#55;&#64;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;">&#49;&#x34;&#x31;&#57;&#x32;&#51;&#x35;&#x38;&#57;&#55;&#64;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;</a></p></div><div class="tab-pane" id="contact-2"><p><i class="fas fa-phone"></i> 15811534195</p></div><div class="tab-pane" id="contact-3"><p><i class="fab fa-github"></i> <a href="https://github.com/oliver037">github.com&#x2F;oliver037</a></p></div></div></div>
+]]></content>
+      <categories>
+        <category>个人简介</category>
+      </categories>
+      <tags>
+        <tag>后端开发</tag>
+        <tag>Java</tag>
+        <tag>Spring Boot</tag>
+      </tags>
+  </entry>
+</search>

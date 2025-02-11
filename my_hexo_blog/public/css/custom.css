@@ -1,0 +1,29 @@
+/* 文章内容样式优化 */
+.post-body {
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+/* 代码块样式 */
+pre {
+  background: #f8f8f8;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+/* 链接样式 */
+a {
+  color: #0366d6;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* 响应式设计优化 */
+@media (max-width: 767px) {
+  .post-body {
+    font-size: 1em;
+  }
+} 
