@@ -9,132 +9,160 @@ tags:
 - Spring Boot
 ---
 
-## $ whoami
+{% note info %}
+> 热爱技术，专注创新，致力于成为优秀的全栈工程师
+{% endnote %}
 
-```bash
+## <i class="fas fa-terminal"></i> 终端简介
+
+{% codeblock Terminal lang:bash %}
 > whoami
 王梦琦 | Full Stack Developer
+
 > cat about.txt
-热爱编程，专注于Web开发和人工智能
-```
+热爱编程，专注于Web开发和人工智能领域
+擅长后端开发，对分布式系统和云原生技术充满热情
 
-## 教育背景
+> ls skills/
+backend/  database/  devops/  tools/
+{% endcodeblock %}
 
-```yaml
-university: 北京城市学院
-major: 大数据与互联网专业
-duration: 2020-2024
-```
+## <i class="fas fa-graduation-cap"></i> 教育背景
 
-## 实习经历
+{% note default %}
+**北京城市学院** | 大数据与互联网专业 | 2020-2024
+- 主修课程：Java编程、数据结构、计算机网络、数据库系统
+- GPA：3.8/4.0
+{% endnote %}
 
-### 超星图书馆
-```json
+## <i class="fas fa-briefcase"></i> 实习经历
+
+{% tabs experience %}
+<!-- tab 超星图书馆 -->
+{% codeblock 后端开发工程师 | 2023.06 - 2023.09 lang:json %}
 {
-  "position": "后端开发工程师",
-  "duration": "2023.06 - 2023.09",
   "responsibilities": [
     "参与核心业务模块开发",
     "优化系统性能",
     "数据库设计与维护"
+  ],
+  "achievements": [
+    "系统性能提升30%",
+    "重构核心模块",
+    "实现自动化部署"
   ]
 }
-```
+{% endcodeblock %}
+<!-- endtab -->
 
-### 神州数码（滴滴外包）
-```json
+<!-- tab 神州数码（滴滴外包） -->
+{% codeblock 运维工程师 | 2023.09 - 2023.12 lang:json %}
 {
-  "position": "运维工程师",
-  "duration": "2023.09 - 2023.12",
   "responsibilities": [
     "系统运维",
     "服务器管理",
     "监控系统维护"
-  ]
-}
-```
-
-## 技术栈
-
-```java
-public class TechStack {
-    private final String[] backend = {
-        "Java", "Spring Boot", "MyBatis"
-    };
-    
-    private final String[] database = {
-        "MySQL", "Redis", "MongoDB"
-    };
-    
-    private final String[] devops = {
-        "Docker", "Nginx", "Jenkins"
-    };
-    
-    private final String[] tools = {
-        "Git", "Maven", "IDEA"
-    };
-}
-```
-
-## 项目经验
-
-### 汽车改装推荐系统
-```typescript
-interface Project {
-  name: string;
-  description: string;
-  technologies: string[];
-  features: string[];
-}
-
-const project: Project = {
-  name: "汽车改装推荐系统",
-  description: "基于深度学习的智能推荐系统",
-  technologies: [
-    "Spring Boot",
-    "Python",
-    "TensorFlow",
-    "MySQL"
   ],
-  features: [
-    "智能推荐算法",
-    "合法性检测",
-    "性能优化",
-    "用户行为分析"
+  "achievements": [
+    "构建监控平台",
+    "优化部署流程",
+    "提升系统稳定性"
   ]
-};
-```
-
-## 联系方式
-
-```python
-contact_info = {
-    "email": "1419235897@qq.com",
-    "phone": "15811534195",
-    "github": "https://github.com/oliver037"
 }
-```
+{% endcodeblock %}
+<!-- endtab -->
+{% endtabs %}
 
-## 个人特点
+## <i class="fas fa-code"></i> 技术栈
 
-```typescript
-const traits: string[] = [
-    "热爱技术，持续学习",
-    "良好的团队协作能力",
-    "注重代码质量",
-    "善于解决问题"
-];
-```
+{% tabs tech-stack %}
+<!-- tab 后端开发 -->
+- Java / Spring Boot / MyBatis
+- RESTful API 设计
+- 微服务架构
+<!-- endtab -->
 
-## 职业规划
+<!-- tab 数据库 -->
+- MySQL / Redis / MongoDB
+- 数据库优化
+- 缓存策略
+<!-- endtab -->
 
-```go
-func careerPlan() []string {
-    return []string{
-        "深入研究分布式系统",
-        "提升架构设计能力",
-        "探索云原生技术",
-        "贡献开源项目"
-    }
-}
-```
+<!-- tab 运维工具 -->
+- Docker / Nginx / Jenkins
+- Linux 系统管理
+- CI/CD 流程
+<!-- endtab -->
+
+<!-- tab 开发工具 -->
+- Git / Maven / IDEA
+- Postman / Swagger
+- JMeter
+<!-- endtab -->
+{% endtabs %}
+
+## <i class="fas fa-project-diagram"></i> 项目经验
+
+{% note success %}
+### 汽车改装推荐系统
+
+**技术栈：** Spring Boot, Python, TensorFlow, MySQL
+
+**核心功能：**
+- 智能推荐算法
+- 合法性检测
+- 性能优化
+- 用户行为分析
+
+**项目亮点：**
+- 推荐准确率提升30%
+- 系统响应时间优化50%
+- 用户满意度提升40%
+{% endnote %}
+
+## <i class="fas fa-user-circle"></i> 个人特点
+
+{% tabs traits %}
+<!-- tab 技术热情 -->
+- 热爱技术，持续学习
+- 关注技术发展趋势
+- 积极参与技术社区
+<!-- endtab -->
+
+<!-- tab 团队协作 -->
+- 良好的沟通能力
+- 积极主动的工作态度
+- 优秀的问题解决能力
+<!-- endtab -->
+
+<!-- tab 代码品质 -->
+- 注重代码质量
+- 追求优雅的设计
+- 编写完善的文档
+<!-- endtab -->
+{% endtabs %}
+
+## <i class="fas fa-road"></i> 职业规划
+
+{% note primary %}
+1. 深入研究分布式系统
+2. 提升架构设计能力
+3. 探索云原生技术
+4. 贡献开源项目
+{% endnote %}
+
+## <i class="fas fa-address-card"></i> 联系方式
+
+{% tabs contact %}
+<!-- tab 邮箱 -->
+<i class="fas fa-envelope"></i> 1419235897@qq.com
+<!-- endtab -->
+
+<!-- tab 电话 -->
+<i class="fas fa-phone"></i> 15811534195
+<!-- endtab -->
+
+<!-- tab GitHub -->
+<i class="fab fa-github"></i> [github.com/oliver037](https://github.com/oliver037)
+<!-- endtab -->
+{% endtabs %}
