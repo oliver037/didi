@@ -1,6 +1,6 @@
 ---
 title: 关于我
-date: 2024-03-21
+date: 2025-02-11
 categories: 
 - 个人简介
 tags:
@@ -30,7 +30,7 @@ backend/  database/  devops/  tools/
 ## <i class="fas fa-graduation-cap"></i> 教育背景
 
 {% note default %}
-**北京城市学院** | 大数据与互联网专业 | 2020-2024
+**北京城市学院** | 大数据与互联网专业 | 2021-2025
 - 主修课程：Java编程、数据结构、计算机网络、数据库系统
 - GPA：3.8/4.0
 {% endnote %}
@@ -39,7 +39,7 @@ backend/  database/  devops/  tools/
 
 {% tabs experience %}
 <!-- tab 超星图书馆 -->
-{% codeblock 后端开发工程师 | 2023.06 - 2023.09 lang:json %}
+{% codeblock 后端开发工程师 | 2023.07 - 2023.09 lang:json %}
 {
   "responsibilities": [
     "参与核心业务模块开发",
@@ -49,14 +49,14 @@ backend/  database/  devops/  tools/
   "achievements": [
     "系统性能提升30%",
     "重构核心模块",
-    "实现自动化部署"
+    "部分接口实现"
   ]
 }
 {% endcodeblock %}
 <!-- endtab -->
 
 <!-- tab 神州数码（滴滴外包） -->
-{% codeblock 运维工程师 | 2023.09 - 2023.12 lang:json %}
+{% codeblock 运维工程师 | 2024.08 - 2025.01 lang:json %}
 {
   "responsibilities": [
     "系统运维",
@@ -102,6 +102,23 @@ backend/  database/  devops/  tools/
 {% endtabs %}
 
 ## <i class="fas fa-project-diagram"></i> 项目经验
+
+{% note success %}
+### 数据仓库ETL平台
+
+**技术栈：** Python, Airflow, MySQL, Redis, Kafka
+
+**核心功能：**
+- 数据抽取转换加载
+- 任务调度管理
+- 数据质量监控
+- 性能优化管理
+
+**项目亮点：**
+- 处理效率提升200%
+- 数据准确率达99.9%
+- 监控覆盖率100%
+{% endnote %}
 
 {% note success %}
 ### 汽车改装推荐系统
