@@ -5,7 +5,31 @@ date: 2024-03-20
 
 ## 个人简介
 
-热衷于后端开发与大数据技术的工程师，具有扎实的计算机基础知识和实践经验。专注于构建高性能、可扩展的系统架构，热爱学习新技术，善于解决复杂问题。
+作为一名充满激情的后端开发工程师，我专注于构建高性能、可扩展的企业级应用系统。在大数据处理和分布式系统开发方面有丰富的实践经验，擅长运用Java生态系统解决复杂的技术难题。
+
+我热衷于编写清晰、高效的代码，注重系统的可维护性和扩展性。同时，我也是开源社区的积极参与者，乐于分享技术经验和解决方案。作为一个终身学习者，我持续关注技术发展趋势，并将新技术应用到实际项目中。
+
+## 项目经验
+
+### 汽车改装推荐系统
+**GitHub地址**: [https://github.com/oliver037/car-modification-recommend](https://github.com/oliver037/car-modification-recommend)
+
+- 基于Spring Boot + MyBatis构建的REST API服务
+- 使用协同过滤算法实现个性化推荐功能
+- 集成Redis实现高并发缓存
+- 采用Elasticsearch提供全文搜索能力
+- 使用Docker实现容器化部署
+- 实现用户行为分析和数据可视化
+
+### 数据仓库ETL平台
+**GitHub地址**: [https://github.com/oliver037/data-warehouse-etl](https://github.com/oliver037/data-warehouse-etl)
+
+- 基于Spring Cloud微服务架构
+- 使用Apache Airflow编排ETL工作流
+- 集成Hadoop和Spark进行大规模数据处理
+- 实现实时数据同步和离线数据处理
+- 支持多源异构数据的采集和转换
+- 提供可视化的任务监控和管理界面
 
 ## 教育背景
 
