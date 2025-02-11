@@ -10,6 +10,15 @@ tags:
 - Airflow
 ---
 
+{% note default %}
+### 文章导航
+- [返回首页](/)
+- [查看更多技术文章](/categories/技术分享/)
+
+### 相关文章
+- [协同过滤在汽车改装推荐中的应用](/2025/02/09/collaborative-filtering/)
+{% endnote %}
+
 {% note info %}
 本文详细介绍数据仓库ETL流程的设计与实现，包括数据抽取、转换、加载的最佳实践。
 {% endnote %}

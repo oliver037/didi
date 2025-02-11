@@ -20,30 +20,36 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="选择有时候比努力更重要">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wmq nb">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="本文详细介绍如何在汽车改装领域应用协同过滤算法，实现个性化的配件推荐。             算法原理             协同过滤算法主要分为两类：基于用户的协同过滤（User-Based CF）基于物品的协同过滤（Item-Based CF）             基于用户的协同过滤实现相似度计算12345678910111213141516171819202">
+<meta property="og:type" content="article">
+<meta property="og:title" content="协同过滤在汽车改装推荐中的应用">
+<meta property="og:url" content="http://example.com/2025/02/09/collaborative-filtering/index.html">
 <meta property="og:site_name" content="wmq nb">
-<meta property="og:description" content="选择有时候比努力更重要">
+<meta property="og:description" content="本文详细介绍如何在汽车改装领域应用协同过滤算法，实现个性化的配件推荐。             算法原理             协同过滤算法主要分为两类：基于用户的协同过滤（User-Based CF）基于物品的协同过滤（Item-Based CF）             基于用户的协同过滤实现相似度计算12345678910111213141516171819202">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-11T08:20:38.394Z">
 <meta property="article:author" content="oliver琦">
+<meta property="article:tag" content="推荐系统">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="协同过滤">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2025/02/09/collaborative-filtering/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>wmq nb</title>
+  <title>协同过滤在汽车改装推荐中的应用 | wmq nb</title>
   
 
 
@@ -164,252 +170,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/11/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="oliver琦">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wmq nb">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/02/11/hello-world/" class="post-title-link" itemprop="url">关于我</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-02-11 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-11T00:00:00+08:00">2025-02-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/" itemprop="url" rel="index"><span itemprop="name">个人简介</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <div class="note info">
-            <blockquote><p>热爱技术，专注创新，致力于成为优秀的全栈工程师</p></blockquote>
-          </div>
-
-<h2 id="终端简介"><a href="#终端简介" class="headerlink" title=" 终端简介"></a><i class="fas fa-terminal"></i> 终端简介</h2><figure class="highlight bash"><figcaption><span>Terminal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">whoami</span></span><br><span class="line">王梦琦 | Full Stack Developer</span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">cat</span> about.txt</span><br><span class="line">热爱编程，专注于Web开发和人工智能领域</span><br><span class="line">擅长后端开发，对分布式系统和云原生技术充满热情</span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">ls</span> skills/</span><br><span class="line">backend/  database/  devops/  tools/</span><br></pre></td></tr></table></figure>
-
-<h2 id="教育背景"><a href="#教育背景" class="headerlink" title=" 教育背景"></a><i class="fas fa-graduation-cap"></i> 教育背景</h2><div class="note default">
-            <p><strong>北京城市学院</strong> | 大数据与互联网专业 | 2021-2025</p><ul><li>主修课程：Java编程、数据结构、计算机网络、数据库系统</li><li>GPA：3.8&#x2F;4.0</li></ul>
-          </div>
-
-<h2 id="实习经历"><a href="#实习经历" class="headerlink" title=" 实习经历"></a><i class="fas fa-briefcase"></i> 实习经历</h2><div class="tabs" id="experience"><ul class="nav-tabs"><li class="tab active"><a href="#experience-1">超星图书馆</a></li><li class="tab"><a href="#experience-2">神州数码（滴滴外包）</a></li></ul><div class="tab-content"><div class="tab-pane active" id="experience-1"><figure class="highlight json"><figcaption><span>后端开发工程师 | 2023.07 - 2023.09</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;responsibilities&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;参与核心业务模块开发&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;优化系统性能&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;数据库设计与维护&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;achievements&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;系统性能提升30%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;重构核心模块&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;部分接口实现&quot;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="experience-2"><figure class="highlight json"><figcaption><span>运维工程师 | 2024.08 - 2025.01</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;responsibilities&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;系统运维&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;服务器管理&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;监控系统维护&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;achievements&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;构建监控平台&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;优化部署流程&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;提升系统稳定性&quot;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div></div></div>
-
-<h2 id="技术栈"><a href="#技术栈" class="headerlink" title=" 技术栈"></a><i class="fas fa-code"></i> 技术栈</h2><div class="tabs" id="tech-stack"><ul class="nav-tabs"><li class="tab active"><a href="#tech-stack-1">后端开发</a></li><li class="tab"><a href="#tech-stack-2">数据库</a></li><li class="tab"><a href="#tech-stack-3">运维工具</a></li><li class="tab"><a href="#tech-stack-4">开发工具</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tech-stack-1"><ul>
-<li>Java &#x2F; Spring Boot &#x2F; MyBatis</li>
-<li>RESTful API 设计</li>
-<li>微服务架构</li>
-</ul></div><div class="tab-pane" id="tech-stack-2"><ul>
-<li>MySQL &#x2F; Redis &#x2F; MongoDB</li>
-<li>数据库优化</li>
-<li>缓存策略</li>
-</ul></div><div class="tab-pane" id="tech-stack-3"><ul>
-<li>Docker &#x2F; Nginx &#x2F; Jenkins</li>
-<li>Linux 系统管理</li>
-<li>CI&#x2F;CD 流程</li>
-</ul></div><div class="tab-pane" id="tech-stack-4"><ul>
-<li>Git &#x2F; Maven &#x2F; IDEA</li>
-<li>Postman &#x2F; Swagger</li>
-<li>JMeter</li>
-</ul></div></div></div>
-
-<h2 id="项目经验"><a href="#项目经验" class="headerlink" title=" 项目经验"></a><i class="fas fa-project-diagram"></i> 项目经验</h2><div class="note success">
-            <h3 id="数据仓库ETL平台"><a href="#数据仓库ETL平台" class="headerlink" title="数据仓库ETL平台"></a>数据仓库ETL平台</h3><p><strong>技术栈：</strong> Python, Airflow, MySQL, Redis, Kafka</p><p><strong>核心功能：</strong></p><ul><li>数据抽取转换加载</li><li>任务调度管理</li><li>数据质量监控</li><li>性能优化管理</li></ul><p><strong>项目亮点：</strong></p><ul><li>处理效率提升200%</li><li>数据准确率达99.9%</li><li>监控覆盖率100%</li></ul>
-          </div>
-
-<div class="note success">
-            <h3 id="汽车改装推荐系统"><a href="#汽车改装推荐系统" class="headerlink" title="汽车改装推荐系统"></a>汽车改装推荐系统</h3><p><strong>技术栈：</strong> Spring Boot, Python, TensorFlow, MySQL</p><p><strong>核心功能：</strong></p><ul><li>智能推荐算法</li><li>合法性检测</li><li>性能优化</li><li>用户行为分析</li></ul><p><strong>项目亮点：</strong></p><ul><li>推荐准确率提升30%</li><li>系统响应时间优化50%</li><li>用户满意度提升40%</li></ul>
-          </div>
-
-<h2 id="个人特点"><a href="#个人特点" class="headerlink" title=" 个人特点"></a><i class="fas fa-user-circle"></i> 个人特点</h2><div class="tabs" id="traits"><ul class="nav-tabs"><li class="tab active"><a href="#traits-1">技术热情</a></li><li class="tab"><a href="#traits-2">团队协作</a></li><li class="tab"><a href="#traits-3">代码品质</a></li></ul><div class="tab-content"><div class="tab-pane active" id="traits-1"><ul>
-<li>热爱技术，持续学习</li>
-<li>关注技术发展趋势</li>
-<li>积极参与技术社区</li>
-</ul></div><div class="tab-pane" id="traits-2"><ul>
-<li>良好的沟通能力</li>
-<li>积极主动的工作态度</li>
-<li>优秀的问题解决能力</li>
-</ul></div><div class="tab-pane" id="traits-3"><ul>
-<li>注重代码质量</li>
-<li>追求优雅的设计</li>
-<li>编写完善的文档</li>
-</ul></div></div></div>
-
-<h2 id="职业规划"><a href="#职业规划" class="headerlink" title=" 职业规划"></a><i class="fas fa-road"></i> 职业规划</h2><div class="note primary">
-            <ol><li>深入研究分布式系统</li><li>提升架构设计能力</li><li>探索云原生技术</li><li>贡献开源项目</li></ol>
-          </div>
-
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title=" 联系方式"></a><i class="fas fa-address-card"></i> 联系方式</h2><div class="tabs" id="contact"><ul class="nav-tabs"><li class="tab active"><a href="#contact-1">邮箱</a></li><li class="tab"><a href="#contact-2">电话</a></li><li class="tab"><a href="#contact-3">GitHub</a></li></ul><div class="tab-content"><div class="tab-pane active" id="contact-1"><p><i class="fas fa-envelope"></i> <a href="mailto:&#49;&#52;&#49;&#x39;&#x32;&#x33;&#x35;&#56;&#57;&#55;&#64;&#113;&#113;&#46;&#99;&#x6f;&#109;">&#49;&#52;&#49;&#x39;&#x32;&#x33;&#x35;&#56;&#57;&#55;&#64;&#113;&#113;&#46;&#99;&#x6f;&#109;</a></p></div><div class="tab-pane" id="contact-2"><p><i class="fas fa-phone"></i> 15811534195</p></div><div class="tab-pane" id="contact-3"><p><i class="fab fa-github"></i> <a target="_blank" rel="noopener" href="https://github.com/oliver037">github.com&#x2F;oliver037</a></p></div></div></div>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/10/data-warehouse-etl/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="oliver琦">
-      <meta itemprop="description" content="选择有时候比努力更重要">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wmq nb">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/02/10/data-warehouse-etl/" class="post-title-link" itemprop="url">数据仓库ETL流程设计与实现</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2025-02-10 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-10T00:00:00+08:00">2025-02-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <div class="note info">
-            <p>本文详细介绍数据仓库ETL流程的设计与实现，包括数据抽取、转换、加载的最佳实践。</p>
-          </div>
-
-<h2 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h2><div class="note primary">
-            <p>整体采用分层架构：</p><ol><li>ODS层：原始数据层</li><li>DWD层：明细数据层</li><li>DWS层：服务数据层</li><li>ADS层：应用数据层</li></ol>
-          </div>
-
-<h2 id="ETL流程实现"><a href="#ETL流程实现" class="headerlink" title="ETL流程实现"></a>ETL流程实现</h2><h3 id="数据抽取"><a href="#数据抽取" class="headerlink" title="数据抽取"></a>数据抽取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">extract_data</span>(<span class="params">source_config</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    数据抽取模块</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 建立数据源连接</span></span><br><span class="line">        conn = create_connection(source_config)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 增量抽取逻辑</span></span><br><span class="line">        last_etl_time = get_last_etl_time()</span><br><span class="line">        sql = <span class="string">f&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">            SELECT * FROM source_table </span></span><br><span class="line"><span class="string">            WHERE update_time &gt; &#x27;<span class="subst">&#123;last_etl_time&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 执行抽取</span></span><br><span class="line">        df = pd.read_sql(sql, conn)</span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        logging.error(<span class="string">f&quot;数据抽取失败: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">transform_data</span>(<span class="params">df</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    数据清洗转换</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 数据类型转换</span></span><br><span class="line">    df[<span class="string">&#x27;create_time&#x27;</span>] = pd.to_datetime(df[<span class="string">&#x27;create_time&#x27;</span>])</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 空值处理</span></span><br><span class="line">    df[<span class="string">&#x27;category&#x27;</span>] = df[<span class="string">&#x27;category&#x27;</span>].fillna(<span class="string">&#x27;未分类&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 业务规则转换</span></span><br><span class="line">    df[<span class="string">&#x27;status&#x27;</span>] = df[<span class="string">&#x27;status&#x27;</span>].<span class="built_in">map</span>(&#123;</span><br><span class="line">        <span class="number">0</span>: <span class="string">&#x27;待处理&#x27;</span>,</span><br><span class="line">        <span class="number">1</span>: <span class="string">&#x27;处理中&#x27;</span>,</span><br><span class="line">        <span class="number">2</span>: <span class="string">&#x27;已完成&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
-
-<h3 id="数据加载"><a href="#数据加载" class="headerlink" title="数据加载"></a>数据加载</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_data</span>(<span class="params">df, target_config</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    数据加载到目标表</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 建立目标库连接</span></span><br><span class="line">        engine = create_engine(target_config)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 分批写入</span></span><br><span class="line">        df.to_sql(</span><br><span class="line">            <span class="string">&#x27;target_table&#x27;</span>,</span><br><span class="line">            engine,</span><br><span class="line">            if_exists=<span class="string">&#x27;append&#x27;</span>,</span><br><span class="line">            index=<span class="literal">False</span>,</span><br><span class="line">            chunksize=<span class="number">1000</span></span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        logging.error(<span class="string">f&quot;数据加载失败: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="调度管理"><a href="#调度管理" class="headerlink" title="调度管理"></a>调度管理</h2><p>使用Airflow进行任务调度：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> airflow <span class="keyword">import</span> DAG</span><br><span class="line"><span class="keyword">from</span> airflow.operators.python_operator <span class="keyword">import</span> PythonOperator</span><br><span class="line"></span><br><span class="line">dag = DAG(</span><br><span class="line">    <span class="string">&#x27;etl_pipeline&#x27;</span>,</span><br><span class="line">    schedule_interval=<span class="string">&#x27;0 2 * * *&#x27;</span>,  <span class="comment"># 每天凌晨2点执行</span></span><br><span class="line">    start_date=datetime(<span class="number">2024</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">extract_task = PythonOperator(</span><br><span class="line">    task_id=<span class="string">&#x27;extract_data&#x27;</span>,</span><br><span class="line">    python_callable=extract_data,</span><br><span class="line">    dag=dag</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">transform_task = PythonOperator(</span><br><span class="line">    task_id=<span class="string">&#x27;transform_data&#x27;</span>,</span><br><span class="line">    python_callable=transform_data,</span><br><span class="line">    dag=dag</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">load_task = PythonOperator(</span><br><span class="line">    task_id=<span class="string">&#x27;load_data&#x27;</span>,</span><br><span class="line">    python_callable=load_data,</span><br><span class="line">    dag=dag</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">extract_task &gt;&gt; transform_task &gt;&gt; load_task</span><br></pre></td></tr></table></figure>
-
-<h2 id="监控告警"><a href="#监控告警" class="headerlink" title="监控告警"></a>监控告警</h2><p>实现了完整的监控告警机制：</p>
-<ol>
-<li><p>数据质量监控</p>
-<ul>
-<li>空值检查</li>
-<li>重复值检查</li>
-<li>数据一致性校验</li>
-</ul>
-</li>
-<li><p>任务执行监控</p>
-<ul>
-<li>运行状态</li>
-<li>执行时长</li>
-<li>错误日志</li>
-</ul>
-</li>
-<li><p>告警通知</p>
-<ul>
-<li>邮件通知</li>
-<li>企业微信通知</li>
-<li>短信通知</li>
-</ul>
-</li>
-</ol>
-<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><p>主要从以下几个方面进行了优化：</p>
-<ol>
-<li>分批处理</li>
-<li>并行计算</li>
-<li>索引优化</li>
-<li>资源控制</li>
-</ol>
-<h2 id="实践总结"><a href="#实践总结" class="headerlink" title="实践总结"></a>实践总结</h2><ol>
-<li>保证数据质量是首要任务</li>
-<li>合理的分层设计很重要</li>
-<li>监控告警要及时准确</li>
-<li>持续优化性能指标</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -425,10 +189,9 @@
       <meta itemprop="name" content="wmq nb">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/02/09/collaborative-filtering/" class="post-title-link" itemprop="url">协同过滤在汽车改装推荐中的应用</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          协同过滤在汽车改装推荐中的应用
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -460,7 +223,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <div class="note info">
+        <div class="note info">
             <p>本文详细介绍如何在汽车改装领域应用协同过滤算法，实现个性化的配件推荐。</p>
           </div>
 
@@ -496,21 +259,36 @@
 <li>持续监控和改进很重要</li>
 </ol>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" rel="tag"># 推荐系统</a>
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4/" rel="tag"># 协同过滤</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2025/02/10/data-warehouse-etl/" rel="next" title="数据仓库ETL流程设计与实现">
+      数据仓库ETL流程设计与实现 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -563,6 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">算法原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%94%A8%E6%88%B7%E7%9A%84%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">基于用户的协同过滤实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E4%BC%BC%E5%BA%A6%E8%AE%A1%E7%AE%97"><span class="nav-number">2.1.</span> <span class="nav-text">相似度计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E7%94%9F%E6%88%90"><span class="nav-number">2.2.</span> <span class="nav-text">推荐生成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%89%A9%E5%93%81%E7%9A%84%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">基于物品的协同过滤实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E5%93%81%E7%9B%B8%E4%BC%BC%E5%BA%A6%E8%AE%A1%E7%AE%97"><span class="nav-number">3.1.</span> <span class="nav-text">物品相似度计算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%B7%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="nav-number">4.</span> <span class="nav-text">冷启动问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E7%9A%84%E6%8E%A8%E8%8D%90"><span class="nav-number">4.1.</span> <span class="nav-text">基于内容的推荐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%8E%A8%E8%8D%90%E7%AD%96%E7%95%A5"><span class="nav-number">4.2.</span> <span class="nav-text">混合推荐策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">5.</span> <span class="nav-text">性能优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E8%AF%84%E4%BC%B0"><span class="nav-number">6.</span> <span class="nav-text">效果评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">经验总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

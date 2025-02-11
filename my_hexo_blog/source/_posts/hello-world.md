@@ -10,7 +10,7 @@ tags:
 ---
 
 {% note info %}
-> 热爱技术，专注创新，致力于成为优秀的全栈工程师
+> 脚踏实地，持续精进，用技术改变生活
 {% endnote %}
 
 ## <i class="fas fa-terminal"></i> 终端简介
