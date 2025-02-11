@@ -1,0 +1,5 @@
+cd your-blog-folder
+npm install hexo-theme-next
+npm install hexo-generator-searchdb # 搜索功能
+npm install hexo-generator-feed # RSS订阅
+npm install hexo-generator-sitemap # 站点地图 

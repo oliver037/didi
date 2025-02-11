@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: wmq nb  #标题
-subtitle: ''
-description: 选择有时候比努力更重要     #简介或者格言
-keywords:
-author: oliver琦     #作者
-language: zh-CN     #主题语言
-timezone: Asia/Shanghai    #中国的时区
+title: Oliver's Blog
+subtitle: '个人技术博客'
+description: '分享技术，记录生活'
+keywords: 技术,博客,编程
+author: Oliver
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next   #主题改为next
+theme: next
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -106,8 +106,28 @@ ignore:
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 
+# 添加菜单项
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
 
 deploy:
   type: git
   repository: https://github.com/oliver037/oliver037.github.io.git #你的仓库地址
   branch: main
+
+search:
+  path: search.xml
+  field: post
+  content: true
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+sitemap:
+  path: sitemap.xml
