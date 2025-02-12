@@ -2,4 +2,7 @@ cd your-blog-folder
 npm install hexo-theme-next
 npm install hexo-generator-searchdb # 搜索功能
 npm install hexo-generator-feed # RSS订阅
-npm install hexo-generator-sitemap # 站点地图 
+npm install hexo-generator-sitemap # 站点地图
+hexo new page about 
+rm source/_posts/about.md
+hexo clean && hexo generate && hexo server 
