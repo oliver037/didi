@@ -10,7 +10,12 @@ type: "about"
 
 ## <i class="fas fa-user"></i> 个人简介
 
-全栈开发工程师，专注于Java后端开发和分布式系统架构设计。热爱编程，对新技术充满热情，享受解决技术难题的过程。同时也关注AI领域的前沿发展，在人工智能艺术创作领域有独到见解。
+全栈开发工程师，专注于Java后端开发和分布式系统架构设计。在中央美术学院发表《艺术法专题｜人工智能对艺术创作的冲击》论文，深入研究AI技术对艺术创作的影响。热爱编程，对新技术充满热情，在技术与艺术的交叉领域有独特见解。
+
+{% note warning %}
+**最新成果**: [《艺术法专题｜人工智能对艺术创作的冲击》](https://mp.weixin.qq.com/s?__biz=MzIzNzAwNTM1OQ==&mid=2650659206&idx=2&sn=2dacd03deafe8e52c7388b5ff0eae699&chksm=f1d0802050b2acd1a6bbd7f5fb376c861573f7a236b17526f8a43d7878f4c8e7d0e9f6546fcf&scene=27)
+发表于中央美术学院艺术管理与教育学院
+{% endnote %}
 
 ## <i class="fas fa-project-diagram"></i> 项目经验
 
